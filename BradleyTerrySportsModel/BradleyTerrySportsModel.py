@@ -11,7 +11,7 @@ expected = dict()
 games = []
 # Open the spreadsheet and assign the first 2 sheets
 # Replace with your xlsx file name
-wb = xlrd.open_workbook('PL_Bradley.xlsx') 
+wb = xlrd.open_workbook('Bradley-Terry Spreadsheet NCAA Hockey.xlsx') 
 firstsheet = wb.sheet_by_index(0)
 secondsheet = wb.sheet_by_index(1)
 # Dictionary of every team's new rating calculated; key = team name, value = new rating
@@ -27,6 +27,7 @@ flag = True
 
 # Read in all the teams and info
 r = 1
+
 while r < firstsheet.nrows:
     # Read in team and their record and add to records dict
     team = firstsheet.cell_value(r, 0)
@@ -119,7 +120,7 @@ for i in range(10):
 # Sort the teams by their rating
 sortedratings = sorted(ratings.items(), key=lambda kv: kv[1], reverse = True)
 # Replace with your xlsx file name
-wb = openpyxl.load_workbook('PL_Bradley.xlsx')
+wb = openpyxl.load_workbook('Bradley-Terry Spreadsheet NCAA Hockey.xlsx')
 wb.create_sheet('Output')
 # For outputting the results into the spreadsheet
 # out = wb.get_sheet_by_name('Output')
@@ -165,4 +166,4 @@ for r in range(firstsheet.nrows):
                 out.cell(row = r + 1, column = col + 1).value = info[sortedratings[r - 1][0]][col - 5]
 
 # Save the sheet with the output
-wb.save('Prediction.xlsx')
+wb.save('sample.xlsx')
