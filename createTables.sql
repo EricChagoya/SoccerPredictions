@@ -14,7 +14,7 @@ DROP TABLE IF EXISTS Combined_Data;
 -- Part 1 Create Tables and load Data
 CREATE TABLE Reddit(
 	season varchar(9),
-    team varchar(20),
+    team varchar(30),
     total_post integer,
     total_comments integer,
     score integer,
@@ -294,14 +294,20 @@ DELETE FROM Games
 
 -- Change team names of Reddit Data to match Games
 UPDATE Reddit SET Team = CASE
+    WHEN Team = 'Cardiff' THEN 'Cardiff City'
+    WHEN Team = 'Huddersfield' THEN 'Huddersfield Town'
     WHEN Team = 'Newcastle' THEN 'Newcastle United'
+    WHEN Team = 'Norwich' THEN 'Norwich City'
     WHEN Team = 'QPR' THEN 'Queens Park Rangers'
+    WHEN Team = 'Sheffield' THEN 'Sheffield United'
     WHEN Team = 'Swansea' THEN 'Swansea City'
     WHEN Team = 'Tottenham' THEN 'Tottenham Hotspur'
     WHEN Team = 'WBA' THEN 'West Bromwich Albion'
     WHEN Team = 'West Ham' THEN 'West Ham United'
+    WHEN Team = 'Wolverhampton' THEN 'Wolverhampton Wanderers'
 END
-WHERE Team IN ('Newcastle', 'QPR', 'Swansea', 'Tottenham', 'WBA', 'West Ham');
+WHERE Team IN ('Cardiff', 'Huddersfield', 'Newcastle', 'Norwich', 'QPR', 'Sheffield', 
+                'Swansea', 'Tottenham', 'WBA', 'West Ham', 'Wolverhampton');
 
 -- Left ones only appear in Reddit
 -- Right ones only appear in Games
@@ -391,4 +397,3 @@ ORDER BY Games2.game_date;
 
 -- Save Data
 \copy Combined_Data TO 'C:\Users\Eric\Desktop\SoccerPredictions\Data\Combined_Data.csv' DELIMITER ',' CSV HEADER;
-
