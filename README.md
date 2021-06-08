@@ -7,6 +7,8 @@
     - It has all the data we have collected, combined and processed
 - Graphs
     - Contains scripts on how to create the referee graph
+- Recency_feature
+    - Contains the work for extracting recency features and contains various csv files that have recency features aggregated with the original data
 
 ### Scripts
 - DataUK_Combine_Data.ipynb
@@ -16,6 +18,10 @@
 - Premier_league_scraper.py
     - The webscrapper that goes to the Premier League website and finds statistics about each individual game from the past 10 years
 - createTables.sql
-    It combines the dataset from DataUK, Reddit, and the Webscraper. Some data cleaning and changing features so they can join
+    - It combines the dataset from DataUK, Reddit, and the Webscraper. Some data cleaning and changing features so they can join
+- Modeling.ipynb
+    - It has all the work for getting the lowest mean RPS(Ranked Probability Score) by logistic regression and k-nearest neighbor
+- correlation_plot.ipynb
+    - This notebook creates the correlation plot heatmap for the data
 
 
