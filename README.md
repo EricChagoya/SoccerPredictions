@@ -1,15 +1,16 @@
 # SoccerPredictions
 
 ### Final Report (FinalReport_githubver.pdf)
-- 10 pages addressing our works of the project
+- 10 pages addressing our works of the project including
     - Problem Statement
     - Related Works
-    - Datasets
+    - Explanation of Datasets used and includes sample datasets
     - Software used
     - Experiments and Evaluation
     - Notebook Evaluation
     - Members Participation
     - Discussion and Conclusion
+    - Multiple graphs demonstrating performance of the models
 
 ### Directories
 - BradleyTerrySportsModel
